@@ -50,7 +50,7 @@ Page({
         categories: categories,
 
       });
-      console.log(categories);
+      // console.log(categories);
       that.getGoodsList(0);
     }).catch((e) => {
 
@@ -109,9 +109,43 @@ Page({
     });
   },
   toDetailsTap: function(e) {
-    wx.navigateTo({
-      url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
-    })
+    var minPrice = e.currentTarget.dataset.minprice;
+    console.log(minPrice);
+    if (minPrice != 0){
+      WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
+        console.log(res.data);
+        if (res.data.balance == 0) {
+          let _msg = '你还未联系管理员,请填写宝宝地址及电话，稍后我们会有管理员与你电话联系，开通即可听有声故事，管理员联系方式:15665259705 微信号：wsrf333444。'
+          wx.showModal({
+            title: '通知管理员',
+            content: _msg,
+            confirmText: "关闭",
+            cancelText: "取消",
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                return;
+              } else {
+                console.log('用户点击取消支付');
+              }
+            }
+          })
+        }else{
+          wx.navigateTo({
+            url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
+          })
+        }
+      })
+
+    }else{
+      wx.navigateTo({
+        url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
+      })
+    }
+
+
+   
+
   },
   onCategoryClick: function(e) {
 

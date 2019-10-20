@@ -5,6 +5,7 @@ const regeneratorRuntime = require('../../utils/runtime')
 
 Page({
   data: {
+    shifouplay:false,
     autoplay: true,
     interval: 3000,
     duration: 1000,
@@ -151,6 +152,20 @@ Page({
       hideShopPopup: false
     })
   },
+
+  playMusic: function (ev) { 
+    var shifouplay = this.data.shifouplay; 
+    if (shifouplay) { 
+      wx.pauseBackgroundAudio(); 
+      this.setData({ shifouplay: false }) 
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.goodsDetail.basicInfo.characteristic, 
+        title: '英文1', 
+        coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000' 
+        }) 
+      this.setData({ shifouplay: true }) } 
+  },
   /**
    * 规格选择弹出框隐藏
    */
@@ -238,6 +253,8 @@ Page({
       goodsDetail: that.data.goodsDetail,
       canSubmit: canSubmit
     })
+
+
   },
   /**
    * 加入购物车
@@ -277,7 +294,7 @@ Page({
     })
     this.closePopupTap();
     wx.showToast({
-      title: '加入购物车成功',
+      title: '加入借阅栏成功',
       icon: 'success',
       duration: 2000
     })

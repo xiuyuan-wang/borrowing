@@ -28,8 +28,8 @@ Page({
   },
   aboutUs : function () {
     wx.showModal({
-      title: '关于我们',
-      content: '本系统基于开源小程序商城系统 https://github.com/EastWorld/wechat-app-mall 搭建，祝大家使用愉快！',
+      title: '联系我们',
+      content: '赶快给宝宝制定阅读计划吧，联系电话：15665259705，微信：wxyysys666',
       showCancel:false
     })
   },
@@ -86,7 +86,7 @@ Page({
     WXAPI.userAmount(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
         that.setData({
-          balance: res.data.balance.toFixed(2),
+          balance: res.data.balance,
           freeze: res.data.freeze.toFixed(2),
           score: res.data.score
         });

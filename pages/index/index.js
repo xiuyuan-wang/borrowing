@@ -30,7 +30,7 @@ Page({
     coupons: [],
 
     curPage: 1,
-    pageSize: 20,
+    pageSize: 40,
     cateScrollTop: 0
   },
 
@@ -50,7 +50,6 @@ Page({
   },
   //事件处理函数
   swiperchange: function(e) {
-    //console.log(e.detail.current)
     this.setData({
       swiperCurrent: e.detail.current
     })

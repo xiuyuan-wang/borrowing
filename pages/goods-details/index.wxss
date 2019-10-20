@@ -90,8 +90,9 @@ swiper-item image {
   font-size: 32rpx;
   line-height: 1.4;
   color: #000;
-  margin-bottom: 28rpx;
+  /* margin-bottom: 28rpx; */
   padding-right: 60px;
+  float: left;
 }
 .goods-info .goods-share{
   box-sizing: border-box;
@@ -106,8 +107,9 @@ swiper-item image {
    color:#e64340;
    font-size: 28rpx;
    font-weight: bold;
-   width: 30%;
-   float:left;
+   margin-right: 35rpx;
+   /* width: 30%; */
+   float:right;
 }
 .row-arrow{
   width: 100%;
@@ -385,4 +387,8 @@ swiper-item image {
 .kjBuyButton {
   width:700rpx;
   margin-top:50rpx;
+}
+.goods-info .pic{
+  width:44rpx;
+  height: 44rpx;
 }
