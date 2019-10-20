@@ -1,25 +1,5 @@
-# 微信小程序商城
+# 微信小程序 借阅
 
-微信小程序商城，微信小程序微店，长期维护版本，欢迎大家踊跃提交贡献代码；
-
-使用说明和常见问题，可参阅下面的说明，如还有疑问，可访问工厂官网 [https://www.it120.cc/](https://www.it120.cc/) 寻求帮助！
-
-## 扫码体验
-
-<p>
-<img src="https://cdn.it120.cc/apifactory/2017/09/15/487409738ebb80c44eda01c46d59b20c.jpg" width="200px">
-<img src="https://cdn.it120.cc/apifactory/2019/03/29/9e30cfe31eabcd218eb9c434f17e9295.jpg" width="200px">
-</p>
-
-## 其他开源模板
-
-### TianguoguoXiaopu
-
-<p>
-<img src="https://cdn.it120.cc/apifactory/2018/04/01/b7b8f5a0fcfc72454ade8510ab929717.jpg" width="200px">
-</p>
-
-[Github地址](https://github.com/qindiandadudu/TianguoguoXiaopu)
 
 ## 接口 & 后台声明
 
@@ -31,24 +11,6 @@
 
 - [WeUI](https://github.com/Tencent/weui-wxss/)
 
-## 关于分类页面
-
-感谢 @yrx0910 编写并提交了分类页面；
-
-不过新增的分类页面视觉美观度上稍欠缺，所以，项目模块并未开启分类页面；
-
-期待后面可以有朋友协助美化~
-
-如果您先体验分类页面，可以在 app.json 中放开分类底部菜单的入口:
-
-```java
-{
-  "pagePath": "pages/category/category",
-  "iconPath": "images/nav/ic_catefory_normal.png",
-  "selectedIconPath": "images/nav/ic_catefory_pressed.png",
-  "text": "分类"
-}
-```
 
 ## 使用说明
 
