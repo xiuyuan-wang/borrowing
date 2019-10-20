@@ -29,7 +29,7 @@ Page({
   },
 
   onLoad: function() {
-    console.log('onLoad')
+    // console.log('onLoad')
 
 
   },

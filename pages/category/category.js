@@ -50,7 +50,7 @@ Page({
         categories: categories,
 
       });
-      console.log(categories);
+      // console.log(categories);
       that.getGoodsList(0);
     }).catch((e) => {
 
@@ -100,7 +100,7 @@ Page({
         goodsWrap: goodsWrap,
       });
 
-      console.log(goodsWrap);
+      // console.log(goodsWrap);
 
       wx.hideNavigationBarLoading();
     }).catch((e) => {

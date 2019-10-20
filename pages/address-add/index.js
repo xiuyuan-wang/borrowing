@@ -29,7 +29,7 @@ Page({
       const index = this.data.pickerRegionRange[0].findIndex(ele=>{
         return ele.name == pname
       })
-      console.log('pindex', index)
+      // console.log('pindex', index)
       if (index >= 0) {
         this.data.pickerSelect[0] = index
         pObject = this.data.pickerRegionRange[0][index]
@@ -77,7 +77,7 @@ Page({
     })
   },
   bindchange: function(e) {
-    console.log(e)
+    // console.log(e)
     const pObject = this.data.pickerRegionRange[0][e.detail.value[0]]
     const cObject = this.data.pickerRegionRange[1][e.detail.value[1]]
     const dObject = this.data.pickerRegionRange[2][e.detail.value[2]]
@@ -92,9 +92,9 @@ Page({
   bindcolumnchange: function(e) {
     const column = e.detail.column
     const index = e.detail.value
-    console.log('eeee:', e)
+    // console.log('eeee:', e)
     const regionObject = this.data.pickerRegionRange[column][index]
-    console.log('bindcolumnchange', regionObject)
+    // console.log('bindcolumnchange', regionObject)
     if (column === 2) {
       this.setData({
         pickerRegionRange: this.data.pickerRegionRange
@@ -161,14 +161,14 @@ Page({
       })
       return
     }
-    if (code == ""){
-      wx.showModal({
-        title: '提示',
-        content: '请填写邮编',
-        showCancel:false
-      })
-      return
-    }
+    // if (code == ""){
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '请填写邮编',
+    //     showCancel:false
+    //   })
+    //   return
+    // }
     let apiResult
     if (that.data.id) {
       apiResult = WXAPI.updateAddress({
@@ -255,7 +255,7 @@ Page({
     const _this = this
     wx.chooseAddress({
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         _this.initRegionDB(res.provinceName, res.cityName, res.countyName)
         _this.setData({
           wxaddress: res

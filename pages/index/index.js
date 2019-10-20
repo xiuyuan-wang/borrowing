@@ -50,7 +50,6 @@ Page({
   },
   //事件处理函数
   swiperchange: function(e) {
-    //console.log(e.detail.current)
     this.setData({
       swiperCurrent: e.detail.current
     })

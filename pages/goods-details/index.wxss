@@ -1,9 +1,13 @@
 @import "/wxParse/wxParse.wxss";
 
 .container {
-  background-color: #F2f2f2;
+  /* background-color: #F2f2f2;
   min-height: 100%;
-  padding-bottom: 100rpx;
+  padding-bottom: 100rpx; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
 }
 .swiper-container{
   width: 100%;
@@ -40,13 +44,7 @@ swiper-item image {
 .swiper-container .dots .dot.active{  
   opacity: .6;
 }
-.goods-info{
-  background-color: #fff;
-  padding: 35rpx 0;
-  margin-bottom: 24rpx;
-  width: 100%;
-  position: relative;
-}
+
 
 .goods-info-fx {
   position: absolute;
@@ -385,4 +383,11 @@ swiper-item image {
 .kjBuyButton {
   width:700rpx;
   margin-top:50rpx;
+}
+.goods-info .pic{
+  position: fixed;
+  width:88rpx;
+  height: 88rpx;
+  right: 10px;
+  top: 10px;
 }
