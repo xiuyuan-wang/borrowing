@@ -18,7 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
     this.initData();
   },
@@ -26,7 +26,7 @@ Page({
 
     let that = this;
     wx.showNavigationBarLoading();
-    WXAPI.goodsCategory().then(function(res) {
+    WXAPI.goodsCategory().then(function (res) {
 
       var categories = [];
       if (res.code == 0) {
@@ -50,7 +50,7 @@ Page({
         categories: categories,
 
       });
-      console.log(categories);
+      // console.log(categories);
       that.getGoodsList(0);
     }).catch((e) => {
 
@@ -58,7 +58,7 @@ Page({
     });
 
   },
-  getGoodsList: function(categoryId, append) {
+  getGoodsList: function (categoryId, append) {
 
     let that = this;
 
@@ -66,7 +66,7 @@ Page({
       categoryId: "",
       page: 1,
       pageSize: 100000
-    }).then(function(res) {
+    }).then(function (res) {
       if (res.code == 404 || res.code == 700) {
 
         return
@@ -100,7 +100,7 @@ Page({
         goodsWrap: goodsWrap,
       });
 
-      console.log(goodsWrap);
+      // console.log(goodsWrap);
 
       wx.hideNavigationBarLoading();
     }).catch((e) => {
@@ -108,12 +108,12 @@ Page({
       wx.hideNavigationBarLoading();
     });
   },
-  toDetailsTap: function(e) {
+  toDetailsTap: function (e) {
     wx.navigateTo({
       url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
     })
   },
-  onCategoryClick: function(e) {
+  onCategoryClick: function (e) {
 
     let id = e.currentTarget.dataset.id;
     this.categoryClick = true;
@@ -123,9 +123,9 @@ Page({
     })
 
   },
-  scroll: function(e) {
+  scroll: function (e) {
 
-    if (this.categoryClick){
+    if (this.categoryClick) {
       this.categoryClick = false;
       return;
     }
@@ -174,13 +174,13 @@ Page({
         }
       }
 
-      if (isBreak){
+      if (isBreak) {
         break;
       }
 
 
     }
 
-  
+
   }
 })

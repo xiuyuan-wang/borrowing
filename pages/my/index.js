@@ -28,8 +28,8 @@ Page({
   },
   aboutUs : function () {
     wx.showModal({
-      title: '关于我们',
-      content: '本系统基于开源小程序商城系统 https://github.com/EastWorld/wechat-app-mall 搭建，祝大家使用愉快！',
+      title: '联系我们',
+      content: '联系电话：18763257699',
       showCancel:false
     })
   },
@@ -70,6 +70,8 @@ Page({
   },
   getUserApiInfo: function () {
     var that = this;
+    console.log(wx.getStorageSync('token'));
+    
     WXAPI.userDetail(wx.getStorageSync('token')).then(function (res) {
       if (res.code == 0) {
         let _data = {}
@@ -78,6 +80,7 @@ Page({
           _data.userMobile = res.data.base.mobile
         }
         that.setData(_data);
+        // console.log
       }
     })
   },

@@ -5,6 +5,7 @@ const regeneratorRuntime = require('../../utils/runtime')
 
 Page({
   data: {
+    shifouplay:false,
     autoplay: true,
     interval: 3000,
     duration: 1000,
@@ -110,6 +111,7 @@ Page({
         }        
       }
       that.setData(_data);
+      console.log(_data.goodsDetail);
       WxParse.wxParse('article', 'html', goodsDetailRes.data.content, that, 5);
     }
   },
@@ -150,6 +152,20 @@ Page({
     this.setData({
       hideShopPopup: false
     })
+  },
+
+  playMusic: function (ev) { 
+    var shifouplay = this.data.shifouplay; 
+    if (shifouplay) { 
+      wx.pauseBackgroundAudio(); 
+      this.setData({ shifouplay: false }) 
+    } else {
+      wx.playBackgroundAudio({
+        dataUrl: this.data.goodsDetail.basicInfo.characteristic, 
+        title: '英文1', 
+        coverImgUrl: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000' 
+        }) 
+      this.setData({ shifouplay: true }) } 
   },
   /**
    * 规格选择弹出框隐藏
@@ -238,6 +254,8 @@ Page({
       goodsDetail: that.data.goodsDetail,
       canSubmit: canSubmit
     })
+
+
   },
   /**
    * 加入购物车
@@ -291,7 +309,7 @@ Page({
   buyNow: function(e) {
     let that = this
     let shoptype = e.currentTarget.dataset.shoptype
-    console.log(shoptype)
+    // console.log(shoptype)
     if (this.data.goodsDetail.properties && !this.data.canSubmit) {
       if (!this.data.canSubmit) {
         wx.showModal({

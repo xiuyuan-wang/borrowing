@@ -1,3 +1,6 @@
+page{
+  background-color: #F2f2f2;
+}
 .container {
   background-color: #fff;
   min-height: 100%;
@@ -85,12 +88,13 @@ swiper-item image {
   background-color: #F2f2f2;
 }
 .goods-box{
-  width: 339rpx;
-  height: 432rpx;
+  /* width: 339rpx; */
+    width: 50%;
+  /* height: 432rpx;
   background-color: #fff;
   overflow: hidden;
   margin-bottom: 24rpx;
-  border-radius:5px;
+  border-radius:5px; */
 }
 .goods-box .img-box{
   width: 339rpx;
@@ -102,7 +106,7 @@ swiper-item image {
    height: 339rpx;
 }
 .goods-box .goods-title{
-  width: 280rpx;
+  /* width: 280rpx; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

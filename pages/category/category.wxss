@@ -57,7 +57,10 @@ page {
   justify-content: flex-start;
   border-bottom: 1rpx solid #f2f2f2;
 }
-
+.goods-item  .pic{
+  width: 33px;
+  height: 33px;
+}
 .goods-pic {
   width: 80px;
   height: 80px;
@@ -68,6 +71,19 @@ page {
   display: flex;
   flex-direction: column;
   padding: 0px 5px 0px 5px;
-  height: 80px;
+  width: 100%;
   justify-content: space-between;
+  vertical-align: middle;
 }
+.goods-info .pic_name{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.goods-info .pic_name .pic{
+  width:66rpx;
+  height: 66rpx;
+  float: right;
+  margin-right: 30rpx;
+}
+
